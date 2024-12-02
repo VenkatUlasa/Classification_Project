@@ -1,0 +1,127 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Ultra&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Ultra', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Anton', sans-serif;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #6c757d;
+        }
+    </style>
+
+    <title>Credit Card Fraud Analysis</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Credit Card Fraud Analysis</h1>
+    </header>
+
+    <div class="container">
+        <form action="/predict" method="POST">
+            <input type="text" name="Age" placeholder="Age" required="required">
+            <input type="text" name="NumberOfOpenCreditLines" placeholder="Number of Open Credit Lines" required="required">
+            <input type="text" name="NumberRealEstateLoansOrLines_log_5th" placeholder="Real Estate Loans/Lines (log)" required="required">
+            <input type="text" name="MonthlyIncome_random_sample_replaced_log_5th" placeholder="Monthly Income (log)" required="required">
+            <input type="text" name="NumberOfDependents_random_sample_replaced_log_5th" placeholder="Dependents (log)" required="required">
+            <input type="text" name="Female" placeholder="Female" required="required">
+            <input type="text" name="Male" placeholder="Male" required="required">
+            <input type="text" name="Central" placeholder="Central" required="required">
+            <input type="text" name="East" placeholder="East" required="required">
+            <input type="text" name="North" placeholder="North" required="required">
+            <input type="text" name="South" placeholder="South" required="required">
+            <input type="text" name="West" placeholder="West" required="required">
+            <input type="text" name="Rented_OwnHouse_re" placeholder="Rented/Own House" required="required">
+            <input type="text" name="Occupation" placeholder="Occupation" required="required">
+            <input type="text" name="Education" placeholder="Education" required="required">
+            <button type="submit" class="btn btn-outline-warning">Predict</button>
+        </form>
+
+        <h3><strong>{{ prediction_text }}</strong></h3>
+
+        <footer>
+            <p>Project By <strong>Venkat Ulasa</strong></p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
